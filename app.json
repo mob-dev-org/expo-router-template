@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "expo-router-template",
+    "slug": "expo-router-template",
+    "owner": "mob_dev",
+    "extra": {
+      "eas": {}
+    },
+    "ios": {
+      "bundleIdentifier": "com.mobdev.exporoutertemplate"
+    },
+    "android": {
+      "package": "com.mobdev.exporoutertemplate"
+    }
+  }
+}
