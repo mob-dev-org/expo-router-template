@@ -19,7 +19,8 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@api/*": ["api/*"]
     }
   },
   "exclude": ["node_modules"],
