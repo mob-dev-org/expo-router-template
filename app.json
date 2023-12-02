@@ -1,20 +1,21 @@
 {
   "expo": {
     "scheme": "acme",
-    "web": {
-      "bundler": "metro"
-    },
+    // "web": {
+    //   "bundler": "metro"
+    // },
     "name": "expo-router-template",
     "slug": "expo-router-template",
-    "owner": "mob_dev",
     "extra": {
-      "eas": {}
+      "eas": {
+        "projectId": "96f6d8d3-4b80-4e46-ad52-774dab54009f"
+      }
     },
     "ios": {
-      "bundleIdentifier": "com.mobdev.exporoutertemplate"
+      "bundleIdentifier": "com.exporoutertemplate"
     },
     "android": {
-      "package": "com.mobdev.exporoutertemplate"
+      "package": "com.exporoutertemplate"
     }
   }
 }

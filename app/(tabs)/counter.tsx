@@ -1,5 +1,5 @@
-import Button from "@components/Button";
-import { useAppStore } from "@stores/useAppStore";
+import Button from "@src/components/Button";
+import { useAppStore } from "@src/stores/useAppStore";
 import { View, Text, StyleSheet } from "react-native";
 
 const Counter = () => {
@@ -11,7 +11,9 @@ const Counter = () => {
     <View style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.title}>Counter</Text>
-        <Text style={styles.subtitle}>This is the Counter page of your app.</Text>
+        <Text style={styles.subtitle}>
+          This is the Counter page of your app.
+        </Text>
         <View style={styles.countContainer}>
           <Button title="+" onPress={increment} />
           <Text style={styles.subtitle}>{count}</Text>

@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, TextInput } from "react-native";
 import { useForm, Resolver } from "react-hook-form";
 import Constants from "expo-constants";
-import Button from "@components/Button";
+import Button from "@src/components/Button";
 
 type FormValues = {
   user: string;
@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Usuario</Text>
+      {/* <Text style={styles.label}>Usuario</Text>
       <TextInput
         {...register("user")}
         style={styles.input}
@@ -57,7 +57,7 @@ const Login = () => {
 
       <View style={styles.buttonContainer}>
         <Button onPress={handleSubmit(onSubmit)} />
-      </View>
+      </View> */}
     </View>
   );
 };

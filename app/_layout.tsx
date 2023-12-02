@@ -4,7 +4,7 @@ import { Link } from "expo-router";
 import { useSegments } from "expo-router";
 import { Drawer } from "expo-router/drawer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ROUTES } from "@utils/constants";
+import { ROUTES } from "@src/utils/constants";
 
 const RootLayout = () => {
   const segments = useSegments();
@@ -12,8 +12,8 @@ const RootLayout = () => {
   const drawerTitle = isLogin
     ? "LOGIN"
     : segments.length > 0
-    ? segments[segments.length - 1].toLowerCase()
-    : "";
+      ? segments[segments.length - 1].toLowerCase()
+      : "";
 
   const client = new QueryClient({
     defaultOptions: {

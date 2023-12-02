@@ -19,14 +19,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@stores/*": ["src/stores/*"],
-      "@utils/*": ["src/utils/*"],
-      "@assets/*": ["assets/*"],
-      "@api/*": ["src/api/*"],
-      "@models/*": ["src/models/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@src/*": ["src/*"]
     }
   },
   "exclude": ["node_modules"],

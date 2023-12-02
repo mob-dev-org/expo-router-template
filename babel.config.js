@@ -8,20 +8,12 @@ module.exports = function (api) {
       ["@babel/plugin-proposal-class-properties", { loose: true }],
       ["@babel/plugin-proposal-export-namespace-from"],
       ["react-native-reanimated/plugin"],
-      ["nativewind/babel"],
       [
         "module-resolver",
         {
           root: ["./src"],
           alias: {
-            "@components": "./src/components",
-            "@layouts": "./src/layouts",
-            "@stores": "./src/stores",
-            "@utils": "./src/utils",
-            "@assets": "./assets",
-            "@api": "./src/api",
-            "@models": "./src/models",
-            "@hooks": "./src/hooks",
+            "@src": "./src",
           },
           extensions: [
             ".js",
