@@ -54,21 +54,21 @@ cd Your_Project_Name
 
 ### Folder: root
 
-- `api`: Generated files from backend. Typescript types and hooks to call api
-- `app`: Expo router
-- `src`: Source folder that contains whole app logic and UI
-  - `assets`:
-    - `icons`: svg files that are transformed into React Native components
-    - `images`: png files
-  - `components` - done by standard of [atomic design](https://blog.logrocket.com/atomic-design-react-native/):
-    - `atoms`: smaller UI components that do one thing
-    - `molecules`: UI components that consist of multiple atoms
-  - `hooks`: custom hooks that can be used throughout the app
-  - `stores`: custom stores for zustand
-  - `utils`: some constants used throughout the app - `constants`: some constants used throughout the app - `helpers`: some helper functions used throughout the app
-  <!-- - `navigation`: configuration for navigation
-  - `screens`: screens, used in navigation, and they contain logic and layout
-  - `store`: redux store for global storage, also is persisted for offline storage. For persisting data it uses secure storage -->
+-   `api`: Generated files from backend. Typescript types and hooks to call api
+-   `app`: Expo router
+-   `src`: Source folder that contains whole app logic and UI
+    -   `assets`:
+        -   `icons`: svg files that are transformed into React Native components
+        -   `images`: png files
+    -   `components` - done by standard of [atomic design](https://blog.logrocket.com/atomic-design-react-native/):
+        -   `atoms`: smaller UI components that do one thing
+        -   `molecules`: UI components that consist of multiple atoms
+    -   `hooks`: custom hooks that can be used throughout the app
+    -   `stores`: custom stores for zustand
+    -   `utils`: some constants used throughout the app - `constants`: some constants used throughout the app - `helpers`: some helper functions used throughout the app
+    <!-- - `navigation`: configuration for navigation
+    -   `screens`: screens, used in navigation, and they contain logic and layout
+    -   `store`: redux store for global storage, also is persisted for offline storage. For persisting data it uses secure storage -->
 
 </details>
 
@@ -98,12 +98,6 @@ yarn android
 
 ```shell
 yarn ios
-```
-
-Triggering command to create development build in Expo EAS services that can be installed on simulator
-
-```shell
-yarn ios:createDevelopmentBuildForSimulator
 ```
 
 <!-------------------------------------------------------------------->
@@ -253,15 +247,15 @@ In addition we will follow [semantic versioning](https://semver.org/).
 
 This is so we can easily generate new changelog.
 
-- `Commiting`:
-  - `git commit`: This will run CLI interface to easily create commit messages that follow conventional commits logic
-  - `commitizen`: It will guide you and prompt you options to choose from so you follow the standard. At the end it will open the editor in terminal with your commit message. All you have to do is type in `:q` to exit and save
-- `Generate CHANGELOG.md` from your commits that follow conventional standard:
-  - Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
-  - To bump up the version in package.json version of this repo and generate changelog:
-    - `yarn release:patch`: (0.0.X)
-    - `yarn release:minor`: (0.X.0)
-    - `yarn release:major`: (X.0.0)
+-   `Commiting`:
+    -   `git commit`: This will run CLI interface to easily create commit messages that follow conventional commits logic
+    -   `commitizen`: It will guide you and prompt you options to choose from so you follow the standard. At the end it will open the editor in terminal with your commit message. All you have to do is type in `:q` to exit and save
+-   `Generate CHANGELOG.md` from your commits that follow conventional standard:
+    -   Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
+    -   To bump up the version in package.json version of this repo and generate changelog:
+        -   `yarn release:patch`: (0.0.X)
+        -   `yarn release:minor`: (0.X.0)
+        -   `yarn release:major`: (X.0.0)
 
 </details>
 <!-------------------------------------------------------------------->
@@ -270,12 +264,12 @@ This is so we can easily generate new changelog.
 <details>
 <summary>Generate CHANGELOG.md</summary>
 
-- `Generate CHANGELOG.md` from your commits that follow conventional standard:
-  - Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
-  - To bump up the version in package.json version of this repo and generate changelog:
-    - `yarn release:patch`: (0.0.X)
-    - `yarn release:minor`: (0.X.0)
-    - `yarn release:major`: (X.0.0)
+-   `Generate CHANGELOG.md` from your commits that follow conventional standard:
+    -   Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
+    -   To bump up the version in package.json version of this repo and generate changelog:
+        -   `yarn release:patch`: (0.0.X)
+        -   `yarn release:minor`: (0.X.0)
+        -   `yarn release:major`: (X.0.0)
 
 </details>
 
@@ -287,9 +281,9 @@ This is so we can easily generate new changelog.
 
 [`Check this blog`](https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/#eslint)
 
-- `ESlint`
-- `Prettier`
-- `Husky`
+-   `ESlint`
+-   `Prettier`
+-   `Husky`
 
 </details>
 
@@ -303,113 +297,56 @@ This is so we can easily generate new changelog.
 
 ### Android
 
-Creates APK file in expo
+EAS Build
 
 ```shell
-yarn android:releaseToExpo
+yarn android:build:production
 ```
 
-Creates AAB file
+Localy it can be found in `android/app/build/outputs/bundle/release/app.aab`
 
 ```shell
-yarn android:prepareForGooglePlay
+yarn android:build:production:locally
 ```
 
-<!-- First you need to bump up the version of the app, so it does not have conflict with previous builds when uploading:
+### iOS
 
-Go to `android/app/build.gradle`
+EAS Build
 
 ```shell
-versionCode 22
-versionName "2.0"
+yarn ios:build:production
 ```
 
-Note: You have two options to generate the project
-
-- `assemble:` Generates an `apk` that you can share with others.
-
-  This is mostly used when you need to upload apk build to [Appcenter](https://appcenter.ms/orgs/Dept-CRO/apps/Razrvrstaj-MojZG/distribute/releases?parent=1), tool that makes it easier to share for testing to other people
-  This is a [Public link](https://install.appcenter.ms/orgs/dept-cro/apps/razrvrstaj-mojzg/distribution_groups/public%20group) that can be shared with testers
-
-  If you want access to this appcenter organization, contact Mateo or Mahir to add you in
+Locally
 
 ```shell
-cd android && ENVFILE=../.env.production ./gradlew assembleRelease && cd ..
+yarn ios:build:production:locally
 ```
-
-- `bundle:` When you are uploading the app to the Play Store. This will generate `.aab`
-
-```shell
-cd android && ENVFILE=../.env.production ./gradlew bundleRelease && cd ..
-```
-
-For more info please go to https://reactnative.dev/docs/signed-apk-android
-
-![Environment files](./__readme-images/android-builds.png "Environment files") -->
-
-<!-- ### iOS
-
-1. Go to the Xcode
-2. Select the schema and target, then bump up the build number, if you previously released some version to production, then update the version number as well
-   ![iOS build](./__readme-images/ios-build.png "iOS build")
-
-3. Select 'Any iOS device' as target
-
-   ![iOS build](./__readme-images/iOS-device-type.png "iOS device type")
-
-4. Product -> Archive
-   ![iOS archive](./__readme-images/ios-archive.png "iOS archive")
-
-5. When archive is finished it will popup a window with that build, all you need to do is upload it, go next -> next until it is finished
-
-For more info please go to https://reactnative.dev/docs/publishing-to-app-store -->
 
 </details>
 
 <!-------------------------------------------------------------------->
 <!-------------------------------------------------------------------->
 
-<!-- <details>
-<summary>Base dependencies</summary>
-v1
+<details>
+<summary>Generate updates</summary>
 
-- [axios](https://github.com/axios/axios) for networking.
-- [typescript](https://www.typescriptlang.org/)
-- [react-navigation](https://reactnavigation.org/) navigation library.
-- [moment](https://momentjs.com/) date library
-- [react-native-geolocation-service](https://www.npmjs.com/package/react-native-geolocation-service) to get users current location coordinates
-- ... many more packages in package.json
-- [jest](https://facebook.github.io/jest/) and [react-native-testing-library](https://callstack.github.io/react-native-testing-library/) for testing.
-- [detox](https://wix.github.io/Detox/) for e2e testing.
+### Development
 
-v2
+```shell
+yarn update:development
+```
 
-- [react-query](https://react-query-v3.tanstack.com/)
-- [redux toolkit](https://redux-toolkit.js.org/) for global storage
-- [redux-persist](https://github.com/rt2zz/redux-persist#readme) for offline global storage
-- [vision-camera-code-scanner](https://www.npmjs.com/package/vision-camera-code-scanner) for barcode scanning
+### Preview
 
+```shell
+yarn update:preview
+```
 
-</details> -->
+### Production
 
-<!-- TODO: add all of other packages -->
+```shell
+yarn update:production
+```
 
-<!-------------------------------------------------------------------->
-<!-------------------------------------------------------------------->
-
-<!-- <details>
-<summary>Icons</summary>
-
-Svg's were downloaded from figma and added to the assets/icons folder
-
-We are using transformer to use them as components in the code - [SVG transformer](https://www.npmjs.com/package/react-native-svg-transformer).
-
-- Add new icons:
-  - `download from figma` - 24x24 as svg
-  - `add it in the folder`
-  - `import it in designSystem/atoms/Icon/index.tsx`
-
-</details> -->
-
-<!-------------------------------------------------------------------->
-<!-------------------------------------------------------------------->
+</details>

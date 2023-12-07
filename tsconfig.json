@@ -1,38 +1,18 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "noUnusedParameters": true,
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "jsx": "react-native",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": false,
-    "sourceMap": true,
-    "target": "esnext",
-    "lib": ["esnext", "dom"],
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "baseUrl": "./",
-    "paths": {
-      "@src/*": ["src/*"],
-      "@api/*": ["api/*"]
-    }
-  },
-  "exclude": ["node_modules"],
-  "include": [
-    "index.js",
-    "App.js",
-    "app",
-    "test",
-    "*.js",
-    "*.jsx",
-    "*.ts",
-    "*.tsx"
-  ],
-  "extends": "expo/tsconfig.base"
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "strict": true,
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "@src/*": ["src/*"],
+            "@api/*": ["api/*"]
+            // "react-native-calendars": ["node_modules/@types/react-native-calendars"]
+        },
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/**/*", ".eslintrc.js", "App.tsx"]
 }

@@ -1,3 +1,3 @@
 export const pokemonApiConfig = {
-  baseURL: "https://pokeapi.co/api/v2",
+    baseURL: 'https://pokeapi.co/api/v2',
 };
