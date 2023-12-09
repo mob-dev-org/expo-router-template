@@ -1,19 +1,37 @@
-// app/(tabs)/_layout.tsx
+import React from 'react';
+import { Tabs } from 'expo-router';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { Text, View } from 'react-native';
-import { TopTabs } from '@bacons/expo-router-top-tabs';
-
-export default function CustomLayout() {
+const RouterTabs = () => {
     return (
-        <TopTabs screenOptions={{}}>
-            <TopTabs.Header>
-                <View pointerEvents="none" style={{}}>
-                    <Text>Header</Text>
-                </View>
-            </TopTabs.Header>
-
-            <TopTabs.Screen name="index" />
-            <TopTabs.Screen name="index2" />
-        </TopTabs>
+        <Tabs initialRouteName="index" screenOptions={{ headerShown: false }}>
+            <Tabs.Screen
+                name="index"
+                options={{
+                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="face-man-profile" size={24} />,
+                }}
+            />
+            <Tabs.Screen
+                name="home"
+                options={{
+                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="home" size={24} />,
+                }}
+            />
+            <Tabs.Screen
+                name="details"
+                options={{
+                    href: { pathname: '/details', params: { user: 'evanbacon' } },
+                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="card-account-details" size={24} />,
+                }}
+            />
+            <Tabs.Screen
+                name="counter"
+                options={{
+                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="counter" size={24} />,
+                }}
+            />
+        </Tabs>
     );
-}
+};
+
+export default RouterTabs;
