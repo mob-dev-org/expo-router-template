@@ -8931,6 +8931,11 @@ react-native-tab-view@^3.3.0:
   dependencies:
     use-latest-callback "^0.1.5"
 
+react-native-unistyles@^2.0.0-beta.7:
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/react-native-unistyles/-/react-native-unistyles-2.0.0-beta.7.tgz#79353224a4e075e7232d31eb1a6e991d61488e75"
+  integrity sha512-BapNgTYq5cZW70rpU+a3K+3f66Ga/2YJtfdm5QLPuvu4zWVA8NWuhlDbs4RPg3uaDanb6T4tAs0FTzPSye3EaQ==
+
 react-native@^0.72.7:
   version "0.72.7"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.72.7.tgz#5bf5b6e6a7ff2239e1d634ddc17c71d5a31927db"

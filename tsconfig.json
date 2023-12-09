@@ -12,7 +12,8 @@
         },
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "jsx": "react-jsx"
     },
-    "include": ["src/**/*", ".eslintrc.js", "App.tsx"]
+    "include": ["src/**/*", "app/**/*", "api/**/*", ".eslintrc.js", "App.tsx"]
 }

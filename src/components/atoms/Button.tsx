@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, StyleSheet, Pressable, PressableProps } from 'react-native';
+import { Text, Pressable, PressableProps } from 'react-native';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 interface ButtonProps extends PressableProps {
     onPress: () => void;
@@ -7,6 +7,8 @@ interface ButtonProps extends PressableProps {
 }
 
 const Button = ({ onPress, title = 'Button', ...rest }: ButtonProps) => {
+    const { styles } = useStyles(stylesheet);
+
     return (
         <Pressable style={styles.button} onPress={onPress} {...rest}>
             <Text style={styles.text}>{title}</Text>
@@ -14,7 +16,7 @@ const Button = ({ onPress, title = 'Button', ...rest }: ButtonProps) => {
     );
 };
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet((theme) => ({
     button: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
-        backgroundColor: 'black',
+        backgroundColor: theme.colors.typography,
     },
     text: {
         fontSize: 16,
@@ -31,6 +33,6 @@ const styles = StyleSheet.create({
         letterSpacing: 0.25,
         color: 'white',
     },
-});
+}));
 
 export default Button;
