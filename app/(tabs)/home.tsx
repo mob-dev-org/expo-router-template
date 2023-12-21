@@ -1,21 +1,28 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { usePokemonList } from '@src/hooks/usePokemon';
+import { useTranslation } from 'react-i18next';
+import { Text, View, StyleSheet, Button } from 'react-native';
+// import { getLocales } from 'expo-localization';
+import { initLanguageDetector } from '@src/languages';
+import { useEffect, useState } from 'react';
+import { useLanguageName } from '@src/stores';
 
 const Home = () => {
-    const { data } = usePokemonList();
-
+    const { language, setlanguage } = useLanguageName();
+    const [change, setChange] = useState(true);
+    useEffect(() => {
+        initLanguageDetector(language).finally(() => {});
+    }, [change]);
+    const changeLanguage = () => {
+        setChange(!change);
+        setlanguage(change ? 'bs-BA' : 'en-US');
+    };
+    const { t } = useTranslation();
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Home</Text>
-            <View>{/* <Text>Hello World</Text> */}</View>
-            <Text style={styles.subtitle}>This is the Details page of your app.</Text>
-            <View>
-                {data?.results ? (
-                    data.results.map((item) => <Text key={item.name}>{item.name}</Text>)
-                ) : (
-                    <Text>No data</Text>
-                )}
-            </View>
+            <Text style={styles.title}>Change language</Text>
+            <Button title="Translate" onPress={changeLanguage} />
+            <Text style={styles.subtitle}>{t('languageSelector')}</Text>
+            <Text style={styles.subtitle}>{t('hello')}</Text>
+            <Text style={styles.subtitle}>{t('languageName')}</Text>
         </View>
     );
 };
@@ -24,21 +31,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
         padding: 24,
     },
 
     title: {
-        fontSize: 64,
+        fontSize: 36,
         fontWeight: 'bold',
+        marginBottom: 16,
     },
     subtitle: {
-        fontSize: 36,
-        color: '#38434D',
-    },
-    linkButton: {
         fontSize: 24,
-        color: '#1B95E0',
-        marginTop: 16,
+        fontWeight: 'bold',
+        marginTop: 24,
     },
 });
 
