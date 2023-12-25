@@ -1,22 +1,40 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { usePokemonList } from '@src/hooks/usePokemon';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { useRef } from 'react';
+import React from 'react';
+import { BottomSheetRef } from '@src/BottomSheet';
+import BottomSheetExample from '@src/BottomSheet/screen/BottomSheetExample';
 
 const Home = () => {
-    const { data } = usePokemonList();
+    const combinedRefDynamic = useRef<BottomSheetRef>();
+
+    // Function to show the modal
+    const showModal = () => {
+        combinedRefDynamic.current?.showModal();
+    };
+    const [selected, setSelected] = React.useState(false);
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Home</Text>
-            <View>{/* <Text>Hello World</Text> */}</View>
-            <Text style={styles.subtitle}>This is the Details page of your app.</Text>
-            <View>
-                {data?.results ? (
-                    data.results.map((item) => <Text key={item.name}>{item.name}</Text>)
-                ) : (
-                    <Text>No data</Text>
-                )}
+        <>
+            <View style={[styles.container, selected && styles.selected]}>
+                <TouchableOpacity
+                    onPress={() => {
+                        console.log('onPress', combinedRefDynamic);
+                        setSelected(!selected);
+                        showModal();
+                    }}>
+                    <View style={[styles.imeContainer]}>
+                        <Text
+                            style={{
+                                fontSize: 20,
+                            }}>
+                            Open modal
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+
+                <BottomSheetExample />
             </View>
-        </View>
+        </>
     );
 };
 
@@ -39,6 +57,16 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#1B95E0',
         marginTop: 16,
+    },
+    selected: {
+        backgroundColor: '#EDEDED',
+    },
+    imeContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        height: 100,
+        overflow: 'visible',
     },
 });
 
