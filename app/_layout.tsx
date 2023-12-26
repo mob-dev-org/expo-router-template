@@ -56,6 +56,7 @@ const RootLayout = () => {
                 initialRouteName="/"
                 screenOptions={{
                     title: drawerTitle,
+                    headerShown: false,
                 }}
             />
         </QueryClientProvider>

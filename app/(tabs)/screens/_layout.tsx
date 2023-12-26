@@ -4,12 +4,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const RouterTabs = () => {
     return (
         <Tabs initialRouteName="index" screenOptions={{ headerShown: false }}>
-            <Tabs.Screen
+            {/* <Tabs.Screen
                 name="index"
                 options={{
                     tabBarIcon: () => <MaterialCommunityIcons color="black" name="face-man-profile" size={24} />,
                 }}
-            />
+            /> */}
             <Tabs.Screen
                 name="home"
                 options={{
@@ -19,7 +19,7 @@ const RouterTabs = () => {
             <Tabs.Screen
                 name="details"
                 options={{
-                    href: { pathname: '/details', params: { user: 'evanbacon' } },
+                    href: { pathname: '/screens/details', params: { user: 'evanbacon' } },
                     tabBarIcon: () => <MaterialCommunityIcons color="black" name="card-account-details" size={24} />,
                 }}
             />
