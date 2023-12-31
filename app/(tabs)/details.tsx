@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 const Details = () => {
+    const { styles } = useStyles(stylesheet);
     const { user } = useLocalSearchParams();
 
     return (
@@ -18,7 +20,7 @@ const Details = () => {
     );
 };
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet({
     container: {
         flex: 1,
         alignItems: 'center',

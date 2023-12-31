@@ -7,12 +7,13 @@ const IS_PREVIEW = process.env.APP_VARIANT === 'preview';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
     ...config,
-    name: IS_DEV ? 'ExporouterTemplate (Dev)' : IS_PREVIEW ? 'ExporouterTemplate Preview' : 'ExporouterTemplate',
+    name: IS_DEV ? '(Dev) ExporouterTemplate' : IS_PREVIEW ? '(Preview) ExporouterTemplate' : 'ExporouterTemplate',
     slug: 'expo-router-template',
     owner: 'mob_dev',
+    scheme: 'expo-router-template',
     version: '1.0.0',
     orientation: 'portrait',
-    icon: `./src/assets/images/${IS_DEV ? 'development' : IS_PREVIEW ? 'development' : 'preview'}.png`,
+    // icon: `./src/assets/images/${IS_DEV ? 'development' : IS_PREVIEW ? 'development' : 'preview'}.png`,
     userInterfaceStyle: 'light',
     jsEngine: 'hermes',
     splash: {
@@ -29,8 +30,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     assetBundlePatterns: ['**/*'],
     ios: {
         supportsTablet: true,
-        // bundleIdentifier: "com.hajrapp",
-        bundleIdentifier: 'com.hajrapp' + (IS_DEV ? '.dev' : ''),
+        bundleIdentifier: 'com.exporoutertemplate' + (IS_DEV ? '.dev' : IS_PREVIEW ? '.preview' : ''),
         infoPlist: {
             // UIBackgroundModes: ["audio"],
         },

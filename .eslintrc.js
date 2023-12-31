@@ -34,7 +34,7 @@ module.exports = {
         // React
         'react/react-in-jsx-scope': 'off',
         'react/jsx-key': 'error', // Validate JSX has key prop when in array or iterator
-        'react-native/no-inline-styles': 2,
+        'react-native/no-inline-styles': 1,
     },
     settings: {
         react: {
