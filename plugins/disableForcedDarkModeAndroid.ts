@@ -23,4 +23,8 @@ const withDisableForcedDarkModeAndroid = (config) => {
     });
 };
 
-module.exports = createRunOncePlugin(withDisableForcedDarkModeAndroid, 'disable-forced-dark-mode', '1.0.0');
+module.exports = createRunOncePlugin(
+    withDisableForcedDarkModeAndroid,
+    'disable-forced-dark-mode',
+    '1.0.0',
+);

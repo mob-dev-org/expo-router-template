@@ -13,7 +13,12 @@ export const Inputs = (args: InputProps) => {
 
     return (
         <>
-            <Input value={text} onChangeText={setText} {...args} style={{ margin: 16, alignSelf: 'center' }} />
+            <Input
+                value={text}
+                onChangeText={setText}
+                {...args}
+                style={{ margin: 16, alignSelf: 'center' }}
+            />
             <Input
                 value={text + text + text + text + text + text}
                 {...args}

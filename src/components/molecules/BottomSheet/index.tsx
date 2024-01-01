@@ -5,14 +5,23 @@ import {
     BottomSheetModal,
     BottomSheetModalProps,
 } from '@gorhom/bottom-sheet';
-import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
+import React, {
+    forwardRef,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useMemo,
+    useRef,
+} from 'react';
 import { ColorValue, Keyboard, Platform } from 'react-native';
 import { BackHandler } from 'react-native';
 
 import styles from './styles';
 
 const CustomBackdrop = (props: BottomSheetBackdropProps) => {
-    return <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.3} />;
+    return (
+        <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.3} />
+    );
 };
 
 export type BottomSheetProps = {

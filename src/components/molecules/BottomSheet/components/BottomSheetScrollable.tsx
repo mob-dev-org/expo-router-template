@@ -5,17 +5,21 @@ import { StyleSheet, View } from 'react-native';
 import BottomSheet, { BottomSheetProps, BottomSheetRef } from '../index';
 import Text from '@src/components/atoms/Text';
 
-const BottomSheetScrollable = forwardRef<BottomSheetRef | undefined, BottomSheetProps>((props, ref) => {
-    return (
-        <BottomSheet ref={ref} {...props}>
-            <>
-                {props.header}
-                <BottomSheetScrollView>{props.children || renderFakeContent()}</BottomSheetScrollView>
-                {props.footer}
-            </>
-        </BottomSheet>
-    );
-});
+const BottomSheetScrollable = forwardRef<BottomSheetRef | undefined, BottomSheetProps>(
+    (props, ref) => {
+        return (
+            <BottomSheet ref={ref} {...props}>
+                <>
+                    {props.header}
+                    <BottomSheetScrollView>
+                        {props.children || renderFakeContent()}
+                    </BottomSheetScrollView>
+                    {props.footer}
+                </>
+            </BottomSheet>
+        );
+    },
+);
 BottomSheetScrollable.displayName = 'BottomSheetScrollable';
 export default BottomSheetScrollable;
 

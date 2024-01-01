@@ -12,6 +12,7 @@ export const hitSlop = (size = 24) => ({
 });
 
 export const shadow = {
+    backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: {
         width: 0,
