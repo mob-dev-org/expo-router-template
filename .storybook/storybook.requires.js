@@ -49,6 +49,8 @@ const getStories = () => {
   return {
     "./src/components/atoms/Button/Button.stories.tsx": require("../src/components/atoms/Button/Button.stories.tsx"),
     "./src/components/atoms/Checkbox/Checkbox.stories.tsx": require("../src/components/atoms/Checkbox/Checkbox.stories.tsx"),
+    "./src/components/atoms/Divider/Divider.stories.tsx": require("../src/components/atoms/Divider/Divider.stories.tsx"),
+    "./src/components/atoms/Input/Input.stories.tsx": require("../src/components/atoms/Input/Input.stories.tsx"),
     "./src/components/atoms/Status/Status.stories.tsx": require("../src/components/atoms/Status/Status.stories.tsx"),
     "./src/components/atoms/Text/Text.stories.tsx": require("../src/components/atoms/Text/Text.stories.tsx"),
     "./src/components/atoms/Toggle/Toggle.stories.tsx": require("../src/components/atoms/Toggle/Toggle.stories.tsx"),
