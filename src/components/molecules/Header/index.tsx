@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { FC } from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { hitSlop, shadow as shadowStyle } from '@src/styles/helpers';
 import { DrawerActions } from '@react-navigation/native';
@@ -48,7 +48,7 @@ const Header: FC<HeaderProps> = ({
     leftItem,
     rightItem,
 }) => {
-    const { top } = useSafeAreaInsets();
+    const { top, bottom } = useSafeAreaInsets();
 
     return (
         <View testID="Header" style={[shadow && shadowStyle, { paddingTop: top }]}>

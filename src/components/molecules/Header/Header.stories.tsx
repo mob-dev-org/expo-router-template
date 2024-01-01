@@ -12,6 +12,7 @@ export const Headers = () => {
     return (
         <>
             <Divider style={{ marginVertical: 16 }} />
+            {/* SINCE THERE IS HEADER SHOW IN SCREEN, SAFE AREA INSET RETURNS 0 FOR TOP */}
             <Header
                 shadow
                 menu
@@ -21,6 +22,7 @@ export const Headers = () => {
             />
             <Divider style={{ marginVertical: 16 }} />
 
+            {/* SINCE THERE IS HEADER SHOW IN SCREEN, SAFE AREA INSET RETURNS 0 FOR TOP */}
             <Header
                 shadow
                 back
@@ -29,8 +31,10 @@ export const Headers = () => {
                 rightItem={<Text>Right</Text>}
             />
             <Divider style={{ marginVertical: 16 }} />
+            {/* SINCE THERE IS HEADER SHOW IN SCREEN, SAFE AREA INSET RETURNS 0 FOR TOP */}
             <Header title="No Shadow" leftItem={<Text>Left</Text>} rightItem={<Text>Right</Text>} />
             <Divider height={0} style={{ marginVertical: 16 }} />
+            {/* SINCE THERE IS HEADER SHOW IN SCREEN, SAFE AREA INSET RETURNS 0 FOR TOP */}
             <Header menu title="Aaaa" />
         </>
     );
