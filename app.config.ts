@@ -25,7 +25,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     updates: {
         fallbackToCacheTimeout: 5000,
-        // url: "https://u.expo.dev/70c1824d-d538-475f-858c-7af762cf6807",
+        url: 'https://u.expo.dev/96f6d8d3-4b80-4e46-ad52-774dab54009f',
     },
     assetBundlePatterns: ['**/*'],
     ios: {
