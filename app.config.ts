@@ -27,6 +27,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         fallbackToCacheTimeout: 5000,
         url: 'https://u.expo.dev/96f6d8d3-4b80-4e46-ad52-774dab54009f',
     },
+    runtimeVersion: {
+        policy: 'sdkVersion', // use this when you want to use Expo Go to run your app, e.g. Expo 49
+        // policy: "appVersion", // use this when you want to publish an update to your EAS
+    },
     assetBundlePatterns: ['**/*'],
     ios: {
         supportsTablet: true,
