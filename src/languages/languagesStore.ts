@@ -31,7 +31,7 @@ export const useLanguage = create<LanguageName, [['zustand/persist', 'language-n
                 void i18n.changeLanguage(nextLanguage);
             },
         }),
-        //pohrana u asyncstorage  https://docs.pmnd.rs/zustand/integrations/persisting-store-storeData
+        //pohrana u persist storage  https://docs.pmnd.rs/zustand/integrations/persisting-store-storeData
         {
             name: 'language',
             // Issue with: https://docs.pmnd.rs/zustand/integrations/persisting-store-data#hydration-and-asynchronous-storages
