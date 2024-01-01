@@ -8,9 +8,9 @@ import {
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { ColorValue, Keyboard, Platform } from 'react-native';
 import { BackHandler } from 'react-native';
+import colors from '@src/constants/colors';
 
 import styles from './styles';
-import colors from '@src/constants/colors';
 
 const CustomBackdrop = (props: BottomSheetBackdropProps) => {
     return <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.3} />;
@@ -32,14 +32,16 @@ export type BottomSheetRef = {
     dismissModal: () => void;
 };
 
+type AdditionalProps = {
+    onClose?: () => void;
+    backgroundColor?: ColorValue;
+    disableBackdrop?: boolean;
+    disableHandle?: boolean;
+};
+
 const BottomSheet = forwardRef<
     BottomSheetRef | undefined,
-    (BottomSheetProps | BottomSheetModalProps) & {
-        onClose?: () => void;
-        backgroundColor?: ColorValue;
-        disableBackdrop?: boolean;
-        disableHandle?: boolean;
-    }
+    (BottomSheetProps | BottomSheetModalProps) & AdditionalProps
 >((props, ref) => {
     const [isOpened, setIsOpened] = React.useState(false);
     // ref

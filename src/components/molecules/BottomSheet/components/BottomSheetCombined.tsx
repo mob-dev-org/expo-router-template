@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react';
 import { LayoutChangeEvent, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Text from '@src/components/atoms/Text';
+
+import { BottomSheetProps, BottomSheetRef } from '..';
 
 import BottomSheetDynamic from './BottomSheetDynamic';
 import BottomSheetScrollable from './BottomSheetScrollable';
-import Text from '@src/components/atoms/Text';
-import { BottomSheetProps, BottomSheetRef } from '..';
 
 const BottomSheetCombined = forwardRef<BottomSheetRef | undefined, BottomSheetProps>((props, ref) => {
     const propsForDynamicSheet = { ...props };

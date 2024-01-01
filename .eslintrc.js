@@ -17,11 +17,23 @@ module.exports = {
     },
     plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'import', 'react-native'],
     rules: {
-        indent: ['error', 4, { SwitchCase: 1 }],
         quotes: ['error', 'single', { avoidEscape: true }],
         'linebreak-style': ['error', 'unix'],
         semi: ['error', 'always'],
-        'prettier/prettier': 'error',
+        'prettier/prettier': [
+            'error',
+            {
+                bracketSpacing: true,
+                bracketSameLine: true,
+                singleQuote: true,
+                trailingComma: 'all',
+                tabWidth: 4,
+                printWidth: 120,
+                importOrder: ['^[./]', '^@/(.*)$'],
+                importOrderSeparation: true,
+                importOrderSortSpecifiers: true,
+            },
+        ],
         'import/order': [
             'error',
             {
@@ -34,7 +46,7 @@ module.exports = {
         // React
         'react/react-in-jsx-scope': 'off',
         'react/jsx-key': 'error', // Validate JSX has key prop when in array or iterator
-        'react-native/no-inline-styles': 2,
+        'react-native/no-inline-styles': 1,
     },
     settings: {
         react: {

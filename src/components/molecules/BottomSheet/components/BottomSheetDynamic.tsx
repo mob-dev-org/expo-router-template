@@ -1,18 +1,14 @@
-import { BottomSheetView, useBottomSheetDynamicSnapPoints } from '@gorhom/bottom-sheet';
-import React, { forwardRef, useMemo } from 'react';
+import { BottomSheetView } from '@gorhom/bottom-sheet';
+import { forwardRef } from 'react';
 import { StyleSheet, View } from 'react-native';
+import Text from '@src/components/atoms/Text';
 
 import BottomSheet, { BottomSheetProps, BottomSheetRef } from '../index';
-import Text from '@src/components/atoms/Text';
 
 const BottomSheetDynamic = forwardRef<BottomSheetRef | undefined, BottomSheetProps>((props, ref) => {
     // -----------------------------------------------------------
     return (
-        <BottomSheet
-            // @ts-ignore
-            enableDynamicSizing
-            ref={ref}
-            {...props}>
+        <BottomSheet enableDynamicSizing ref={ref} {...props}>
             <BottomSheetView>{props.children || renderFakeContent()}</BottomSheetView>
         </BottomSheet>
     );
