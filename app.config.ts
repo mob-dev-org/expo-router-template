@@ -7,12 +7,13 @@ const IS_PREVIEW = process.env.APP_VARIANT === 'preview';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
     ...config,
-    name: IS_DEV ? 'ExporouterTemplate (Dev)' : IS_PREVIEW ? 'ExporouterTemplate Preview' : 'ExporouterTemplate',
+    name: IS_DEV ? '(Dev) ExporouterTemplate' : IS_PREVIEW ? '(Preview) ExporouterTemplate' : 'ExporouterTemplate',
     slug: 'expo-router-template',
     owner: 'mob_dev',
+    scheme: 'expo-router-template',
     version: '1.0.0',
     orientation: 'portrait',
-    icon: `./src/assets/images/${IS_DEV ? 'development' : IS_PREVIEW ? 'development' : 'preview'}.png`,
+    // icon: `./src/assets/images/${IS_DEV ? 'development' : IS_PREVIEW ? 'development' : 'preview'}.png`,
     userInterfaceStyle: 'light',
     jsEngine: 'hermes',
     splash: {
@@ -24,13 +25,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     updates: {
         fallbackToCacheTimeout: 5000,
-        // url: "https://u.expo.dev/70c1824d-d538-475f-858c-7af762cf6807",
+        url: 'https://u.expo.dev/96f6d8d3-4b80-4e46-ad52-774dab54009f',
+    },
+    runtimeVersion: {
+        policy: 'sdkVersion', // use this when you want to use Expo Go to run your app, e.g. Expo 49
+        // policy: "appVersion", // use this when you want to publish an update to your EAS
     },
     assetBundlePatterns: ['**/*'],
     ios: {
         supportsTablet: true,
-        // bundleIdentifier: "com.hajrapp",
-        bundleIdentifier: 'com.hajrapp' + (IS_DEV ? '.dev' : ''),
+        bundleIdentifier: 'com.exporoutertemplate' + (IS_DEV ? '.dev' : IS_PREVIEW ? '.preview' : ''),
         infoPlist: {
             // UIBackgroundModes: ["audio"],
         },

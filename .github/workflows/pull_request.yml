@@ -1,0 +1,71 @@
+name: preview
+on: pull_request
+
+# env:
+#   CONTENTFUL_DELIVERY_ACCESS_TOKEN: ${{ vars.CONTENTFUL_DELIVERY_ACCESS_TOKEN }}
+#   CONTENTFUL_SPACE_ID: ${{ vars.CONTENTFUL_SPACE_ID }}
+#   CONTENTFUL_ENV_ID: ${{ vars.CONTENTFUL_ENV_ID }}
+
+jobs:
+    update:
+        name: EAS Preview
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: write
+        steps:
+            - name: Check for EXPO_TOKEN
+              run: |
+                  if [ -z "${{ secrets.EXPO_TOKEN }}" ]; then
+                    echo "You must provide an EXPO_TOKEN secret linked to this project's Expo account in this repo's secrets. Learn more: https://docs.expo.dev/eas-update/github-actions"
+                    exit 1
+                  fi
+
+            - name: Checkout repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - name: Set tags env variables.
+              run: |
+                  # Get your last commit message, not the merge commit.
+                  text=$(git log -1 --no-merges --pretty=%B)
+                  echo "commit_msg=$text" >> $GITHUB_ENV
+
+            - name: Logging
+              run: |
+                  echo "${{ env.commit_msg }}"
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.x
+                  cache: yarn
+
+            - name: Setup EAS
+              uses: expo/expo-github-action@v8
+              with:
+                  eas-version: latest
+                  token: ${{ secrets.EXPO_TOKEN }}
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Create preview
+              uses: expo/expo-github-action/preview@v8
+              id: preview
+              with:
+                  command: eas update --branch development --message "${{ env.commit_msg }}"
+
+            - name: 💬 Comment in Slack
+              uses: slackapi/slack-github-action@v1.24.0
+              env:
+                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+                  SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+                  channel_name: mobile-depoloyments
+              with:
+                  channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+                  payload: |
+                      {
+                        "text": "New update for development is ready!\n Update name:    ${{ env.commit_msg }}\nPull request: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                      }
