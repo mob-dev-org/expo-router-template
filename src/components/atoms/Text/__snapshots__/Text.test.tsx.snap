@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text No text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "text",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "includeFontPadding": false,
+      },
+      {},
+      false,
+      false,
+    ]
+  }
+/>
+`;
+
+exports[`Text With all of the properties passed 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "red",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "includeFontPadding": false,
+      },
+      {
+        "color": "green",
+      },
+      {
+        "textAlign": "center",
+      },
+      {
+        "textAlignVertical": "center",
+      },
+    ]
+  }
+>
+  With text
+</Text>
+`;
+
+exports[`Text With text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "text",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "includeFontPadding": false,
+      },
+      {},
+      false,
+      false,
+    ]
+  }
+>
+  With text
+</Text>
+`;
+
+exports[`Text With text and centered text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "text",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "includeFontPadding": false,
+      },
+      {},
+      {
+        "textAlign": "center",
+      },
+      false,
+    ]
+  }
+>
+  With text
+</Text>
+`;
+
+exports[`Text With text and size 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "text",
+        "fontSize": 10,
+        "fontWeight": "normal",
+        "includeFontPadding": false,
+      },
+      {},
+      false,
+      false,
+    ]
+  }
+>
+  With text
+</Text>
+`;
+
+exports[`Text With text and vertically centered text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "text",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "includeFontPadding": false,
+      },
+      {},
+      false,
+      {
+        "textAlignVertical": "center",
+      },
+    ]
+  }
+>
+  With text
+</Text>
+`;
+
+exports[`Text With text and weight bold 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "text",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "includeFontPadding": false,
+      },
+      {},
+      false,
+      false,
+    ]
+  }
+>
+  With text
+</Text>
+`;
