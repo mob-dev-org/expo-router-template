@@ -7,7 +7,11 @@ const IS_PREVIEW = process.env.APP_VARIANT === 'preview';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
     ...config,
-    name: IS_DEV ? '(Dev) ExporouterTemplate' : IS_PREVIEW ? '(Preview) ExporouterTemplate' : 'ExporouterTemplate',
+    name: IS_DEV
+        ? '(Dev) ExporouterTemplate'
+        : IS_PREVIEW
+          ? '(Preview) ExporouterTemplate'
+          : 'ExporouterTemplate',
     slug: 'expo-router-template',
     owner: 'mob_dev',
     scheme: 'expo-router-template',
@@ -34,7 +38,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     assetBundlePatterns: ['**/*'],
     ios: {
         supportsTablet: true,
-        bundleIdentifier: 'com.exporoutertemplate' + (IS_DEV ? '.dev' : IS_PREVIEW ? '.preview' : ''),
+        bundleIdentifier:
+            'com.exporoutertemplate' + (IS_DEV ? '.dev' : IS_PREVIEW ? '.preview' : ''),
         infoPlist: {
             // UIBackgroundModes: ["audio"],
         },

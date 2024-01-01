@@ -1,50 +1,78 @@
-import { Text as RNText } from 'react-native';
-import { TextStyle } from 'react-native';
+import React, { FunctionComponent } from 'react';
+import { Text as RNText, TextStyle } from 'react-native';
 
-export interface TextProps {
-    weight?: TextStyle['fontWeight'];
-    color?: TextStyle['color'];
-    style?: TextStyle;
-    children?: any;
-    size?: number;
+// import { themeColor as themeColors } from '../../../const/variables';
+// import { GarbageType } from '../../../api/zgApi.schemas';
+
+import styles from './styles';
+
+export type TextColors =
+    | 'black'
+    | 'white'
+    | 'blueGray'
+    | 'gray'
+    | 'gray2'
+    | 'lightGray'
+    | 'green'
+    | 'red'
+    | 'blue'
+    | 'lightBlue'
+    | 'lightGrayWithOpacity';
+
+export type TextSize = 8 | 11 | 12 | 13 | 14 | 16 | 18 | 20 | 24 | 32;
+
+export type TextProps = {
+    size?: TextSize;
+    color?: TextColors;
+    customColor?: string;
+    // TODO: add more weights with numbers in name
+    weight?: 'light' | 'regular' | 'medium' | 'semiBold' | 'bold';
+    uppercase?: boolean;
+    // themeColor?: GarbageType;
     center?: boolean;
-    centerVertical?: boolean;
+    lineHeight?: number;
+    letterSpacing?: number;
     numberOfLines?: number;
-    arabic?: boolean;
-}
+    style?: TextStyle;
+    disableFontScaling?: boolean;
+    children: React.ReactNode;
+};
 
-const Text = ({
-    weight = 'normal',
-    size = 16,
+const Text: FunctionComponent<TextProps> = ({
     children,
-    style = {},
-    center = false,
-    // color = colors.text,
-    color = '#faf',
-    centerVertical = false,
+    color = 'black',
+    customColor,
+    size = 16,
+    weight = 'regular',
+    uppercase,
+    // themeColor,
+    center,
+    lineHeight,
     numberOfLines,
-    arabic = false,
-}: TextProps) => {
+    style,
+    letterSpacing,
+    disableFontScaling,
+}) => {
     return (
         <RNText
+            numberOfLines={numberOfLines}
             style={[
-                style,
-                center && { textAlign: 'center' },
-                centerVertical && { textAlignVertical: 'center' },
                 {
+                    ...style,
                     fontSize: size,
-                    includeFontPadding: false,
-                    color,
-                    fontWeight: weight,
-                },
-                arabic && {
-                    fontFamily: 'Hafs',
-                    // fontFamily: "Nabi",
-                    // fontFamily: "AlQalamQuran",
+                    textAlignVertical: 'center',
                     includeFontPadding: false,
                 },
+                styles[weight],
+                styles[color],
+                !!customColor && { color: customColor },
+                // themeColor && { color: themeColors[themeColor] },
+                uppercase && styles.uppercase,
+                center && { textAlign: 'center' },
+                !!lineHeight && { lineHeight },
+                !!letterSpacing && { letterSpacing },
             ]}
-            {...(numberOfLines ? { numberOfLines } : {})}>
+            allowFontScaling={!disableFontScaling}>
             {children}
         </RNText>
     );

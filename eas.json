@@ -11,7 +11,8 @@
                 "buildType": "apk"
             },
             "env": {
-                "APP_VARIANT": "development"
+                "APP_VARIANT": "development",
+                "EXPO_PUBLIC_STORYBOOK_ENABLED": "true"
             }
         },
         "development-simulator": {
@@ -22,7 +23,8 @@
                 "simulator": true
             },
             "env": {
-                "APP_VARIANT": "development"
+                "APP_VARIANT": "development",
+                "EXPO_PUBLIC_STORYBOOK_ENABLED": "true"
             }
         },
         "preview": {

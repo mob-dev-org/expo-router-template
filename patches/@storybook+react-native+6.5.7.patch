@@ -1,0 +1,37 @@
+diff --git a/node_modules/@storybook/react-native/dist/index.js b/node_modules/@storybook/react-native/dist/index.js
+index 367f405..f85e939 100644
+--- a/node_modules/@storybook/react-native/dist/index.js
++++ b/node_modules/@storybook/react-native/dist/index.js
+@@ -108,7 +108,7 @@ function executeLoadableForChanges(loadable, m) {
+ 
+ // src/preview/View.tsx
+ var import_react14 = require("react");
+-var import_async_storage = __toESM(require("@react-native-async-storage/async-storage"));
++// var import_async_storage = __toESM(require("@react-native-async-storage/async-storage"));
+ var import_csf = require("@storybook/csf");
+ var import_addons3 = require("@storybook/addons");
+ var import_react_native_theming12 = require("@storybook/react-native-theming");
+@@ -1362,8 +1362,8 @@ var View10 = class {
+       try {
+         let value = this._asyncStorageStoryId;
+         if (!value) {
+-          value = await import_async_storage.default.getItem(STORAGE_KEY);
+-          this._asyncStorageStoryId = value;
++          // value = await import_async_storage.default.getItem(STORAGE_KEY);
++          // this._asyncStorageStoryId = value;
+         }
+         return { storySpecifier: value ?? "*", viewMode: "story" };
+       } catch (e) {
+@@ -1422,9 +1422,9 @@ var View10 = class {
+         self._setStory = (newStory) => {
+           setContext(newStory);
+           if (shouldPersistSelection) {
+-            import_async_storage.default.setItem(STORAGE_KEY, newStory.id).catch((e) => {
+-              console.warn("storybook-log: error writing to async storage", e);
+-            });
++            // import_async_storage.default.setItem(STORAGE_KEY, newStory.id).catch((e) => {
++            //   console.warn("storybook-log: error writing to async storage", e);
++            // });
+           }
+         };
+         self._forceRerender = () => forceUpdate();

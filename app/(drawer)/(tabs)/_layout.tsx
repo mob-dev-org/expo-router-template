@@ -11,13 +11,17 @@ const RouterTabs = () => {
             <Tabs.Screen
                 name="index"
                 options={{
-                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="home" size={24} />,
+                    tabBarIcon: () => (
+                        <MaterialCommunityIcons color="black" name="home" size={24} />
+                    ),
                 }}
             />
             <Tabs.Screen
                 name="login"
                 options={{
-                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="face-man-profile" size={24} />,
+                    tabBarIcon: () => (
+                        <MaterialCommunityIcons color="black" name="face-man-profile" size={24} />
+                    ),
                 }}
             />
 
@@ -25,7 +29,13 @@ const RouterTabs = () => {
                 name="details"
                 options={{
                     href: { pathname: '/details', params: { user: 'evanbacon' } },
-                    tabBarIcon: () => <MaterialCommunityIcons color="black" name="card-account-details" size={24} />,
+                    tabBarIcon: () => (
+                        <MaterialCommunityIcons
+                            color="black"
+                            name="card-account-details"
+                            size={24}
+                        />
+                    ),
                 }}
             />
         </Tabs>
