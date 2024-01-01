@@ -1,3 +1,5 @@
+import { getColorWithOpacity } from './helpers';
+
 const sharedColors = {
     barbie: '#ff9ff3',
     oak: '#1dd1a1',
@@ -7,6 +9,10 @@ const sharedColors = {
     blood: '#ff6b6b',
 };
 
+const utils = {
+    getColorWithOpacity,
+};
+
 export const lightTheme = {
     colors: {
         ...sharedColors,
@@ -14,6 +20,7 @@ export const lightTheme = {
         typography: '#000000',
         accent: sharedColors.blood,
     },
+    utils,
     // add any keys/functions/objects/arrays you want!
 };
 
@@ -24,6 +31,8 @@ export const darkTheme = {
         typography: '#ffffff',
         accent: sharedColors.barbie,
     },
+    utils,
+
     // add any keys/functions/objects/arrays you want!
 };
 
@@ -34,5 +43,6 @@ export const premiumTheme = {
         typography: '#76278f',
         accent: '#000000',
     },
+    utils,
     // add any keys/functions/objects/arrays you want!
 };

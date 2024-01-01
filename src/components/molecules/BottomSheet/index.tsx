@@ -8,7 +8,6 @@ import {
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { ColorValue, Keyboard, Platform } from 'react-native';
 import { BackHandler } from 'react-native';
-import colors from '@src/constants/colors';
 
 import styles from './styles';
 
@@ -123,7 +122,7 @@ const BottomSheet = forwardRef<
                 if (index === -1) props.onClose && props.onClose();
             }}
             backgroundStyle={{
-                backgroundColor: props?.backgroundColor ?? colors.lightBlue,
+                backgroundColor: props?.backgroundColor ?? '#fff',
             }}
             style={styles.bottomSheet}
             {...props}

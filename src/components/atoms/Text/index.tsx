@@ -1,5 +1,3 @@
-import colors from '@src/constants/colors';
-import * as React from 'react';
 import { Text as RNText } from 'react-native';
 import { TextStyle } from 'react-native';
 
@@ -21,9 +19,10 @@ const Text = ({
     children,
     style = {},
     center = false,
-    color = colors.text,
+    // color = colors.text,
+    color = '#faf',
     centerVertical = false,
-    numberOfLines = null,
+    numberOfLines,
     arabic = false,
 }: TextProps) => {
     return (

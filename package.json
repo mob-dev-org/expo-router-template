@@ -76,6 +76,7 @@
         "@commitlint/config-conventional": "^18.4.3",
         "@tanstack/eslint-plugin-query": "^5.14.6",
         "@total-typescript/ts-reset": "^0.5.1",
+        "@types/color": "^3.0.6",
         "@types/react": "^18.2.40",
         "@typescript-eslint/eslint-plugin": "^6.13.2",
         "@typescript-eslint/parser": "^6.13.2",
