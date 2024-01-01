@@ -12,7 +12,7 @@ const Details = () => {
                 <Text style={styles.title}>Details</Text>
                 <Text style={styles.subtitle}>This is the Details page of your app.</Text>
                 <Text style={styles.user}>Use param: {user}</Text>
-                <Link href="/" style={styles.linkButton}>
+                <Link href="/aaa" style={styles.linkButton}>
                     Go to Login
                 </Link>
             </View>

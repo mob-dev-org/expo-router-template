@@ -3,7 +3,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const RouterTabs = () => {
     return (
-        <Tabs screenOptions={{ headerShown: false }}>
+        <Tabs
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: 'black',
+            }}>
             <Tabs.Screen
                 name="index"
                 options={{

@@ -65,7 +65,6 @@ const Login = () => {
 
 const stylesheet = createStyleSheet({
     label: {
-        color: 'white',
         margin: 20,
         marginLeft: 0,
     },
