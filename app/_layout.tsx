@@ -3,7 +3,6 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { useLanguage } from '@src/languages/languagesStore';
-import '@src/styles';
 
 const RouterTabs = () => {
     const client = new QueryClient();
