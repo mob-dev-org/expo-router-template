@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Text, View, Button } from 'react-native';
 import { useLanguage } from '@src/languages/languagesStore';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import AppIcon from '@src/components/atoms/icons/AppIcon';
 
 const Home = () => {
     const { t } = useTranslation();
@@ -10,6 +11,10 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
+            <AppIcon name="chevron-down" />
+            <AppIcon name="info" />
+            <AppIcon name="bell" />
+            <AppIcon name="chevron-down-new" />
             <Text style={styles.title}>Change language</Text>
             <Button title="Translate" onPress={toggleLanguage} />
             <Text style={styles.subtitle}>{t('languageSelector')}</Text>

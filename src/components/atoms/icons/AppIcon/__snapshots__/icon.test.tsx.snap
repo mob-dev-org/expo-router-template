@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon When adding style use it in icon 1`] = `
+<SvgrURL
+  color="black"
+  height={24}
+  style={
+    {
+      "marginTop": 16,
+    }
+  }
+  testID="bellIcon"
+  width={24}
+/>
+`;
+
+exports[`Icon When passing one of the names to return Icon and match snapshot 1`] = `
+<SvgrURL
+  color="black"
+  height={24}
+  testID="backIcon"
+  width={24}
+/>
+`;
+
+exports[`Icon When passing stroke use it in icon 1`] = `
+<SvgrURL
+  color="#ccc"
+  height={24}
+  testID="bellIcon"
+  width={24}
+/>
+`;
