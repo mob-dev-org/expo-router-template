@@ -1,8 +1,7 @@
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, StyleSheet } from 'react-native';
 import { useForm, Resolver } from 'react-hook-form';
 import Constants from 'expo-constants';
 import Button from '@src/components/atoms/Button';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 type FormValues = {
     user: string;
@@ -28,8 +27,6 @@ const resolver: Resolver<FormValues> = (values) => {
 };
 
 const Login = () => {
-    const { styles } = useStyles(stylesheet);
-
     const {
         register,
         setValue,
@@ -67,7 +64,7 @@ const Login = () => {
     );
 };
 
-const stylesheet = createStyleSheet({
+const styles = StyleSheet.create({
     label: {
         margin: 20,
         marginLeft: 0,
