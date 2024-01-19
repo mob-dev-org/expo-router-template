@@ -44,7 +44,7 @@ const BottomSheetExample = () => {
                 <BottomSheet ref={sheetWithInputRef} snapPoints={['70%']}>
                     <BottomSheetTextInput
                         style={{
-                            borderColor: '#fff',
+                            borderColor: '#faf',
                             borderWidth: 1,
                             margin: 16,
                         }}
