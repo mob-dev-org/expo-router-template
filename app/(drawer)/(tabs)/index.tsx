@@ -1,13 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
 import { useLanguage } from '@src/languages/languagesStore';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
 import AppIcon from '@src/components/atoms/icons/AppIcon';
 
 const Home = () => {
     const { t } = useTranslation();
     const { toggleLanguage } = useLanguage();
-    const { styles } = useStyles(stylesheet);
 
     return (
         <View style={styles.container}>
@@ -24,7 +22,7 @@ const Home = () => {
     );
 };
 
-const stylesheet = createStyleSheet({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
