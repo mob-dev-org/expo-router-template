@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
+import { Button } from 'react-native-paper';
 
 const Details = () => {
     const { user } = useLocalSearchParams();
@@ -7,6 +8,9 @@ const Details = () => {
     return (
         <View style={styles.container}>
             <View style={styles.main}>
+                <Button mode="contained" onPress={() => {}}>
+                    Press me
+                </Button>
                 <Text style={styles.title}>Details</Text>
                 <Text style={styles.subtitle}>This is the Details page of your app.</Text>
                 <Text style={styles.user}>Use param: {user}</Text>

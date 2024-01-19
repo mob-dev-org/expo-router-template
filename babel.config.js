@@ -7,6 +7,7 @@ module.exports = function (api) {
             ['@babel/plugin-proposal-class-properties', { loose: true }],
             ['@babel/plugin-proposal-export-namespace-from'],
             ['react-native-reanimated/plugin'],
+            'react-native-paper/babel',
             [
                 'module-resolver',
                 {
