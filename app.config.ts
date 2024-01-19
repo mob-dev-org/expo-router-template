@@ -64,5 +64,5 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
             projectId: '96f6d8d3-4b80-4e46-ad52-774dab54009f',
         },
     },
-    plugins: ['./plugins/disableForcedDarkModeAndroid.ts'],
+    plugins: ['./plugins/disableForcedDarkModeAndroid.ts', 'expo-localization'],
 });

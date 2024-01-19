@@ -4,7 +4,6 @@ module.exports = function (api) {
         presets: ['babel-preset-expo'],
         plugins: [
             ['@babel/plugin-transform-flow-strip-types'],
-            ['@babel/plugin-proposal-decorators', { legacy: true }],
             ['@babel/plugin-proposal-class-properties', { loose: true }],
             ['@babel/plugin-proposal-export-namespace-from'],
             ['react-native-reanimated/plugin'],
@@ -29,7 +28,6 @@ module.exports = function (api) {
                     ],
                 },
             ],
-            require.resolve('expo-router/babel'),
         ],
     };
 };
