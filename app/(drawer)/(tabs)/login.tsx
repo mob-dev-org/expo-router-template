@@ -3,6 +3,7 @@ import { useForm, Resolver } from 'react-hook-form';
 import Constants from 'expo-constants';
 import Button from '@src/components/atoms/Button';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import { supabase } from '@src/utils/supabase';
 
 type FormValues = {
     user: string;
@@ -33,12 +34,20 @@ const Login = () => {
     const {
         register,
         setValue,
-        handleSubmit,
+        // handleSubmit,
         formState: { errors },
     } = useForm<FormValues>({ resolver });
 
-    const onSubmit = (data) => {
-        console.log('data', data);
+    const onSubmit = async (data) => {
+        try {
+            const { data: userData, error } = await supabase.auth.signUp({
+                email: 'someone@email.com',
+                password: 'clxEolSsBmywwTryuobQ',
+            });
+            console.log('data', data, userData, error);
+        } catch (error) {
+            console.log('error', error);
+        }
     };
 
     return (
@@ -61,7 +70,9 @@ const Login = () => {
 
             <View style={styles.buttonContainer}>
                 {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
-                <Button onPress={handleSubmit(onSubmit)} />
+                {/* <Button label="Login" onPress={handleSubmit(onSubmit)} /> */}
+                {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+                <Button label="Login" onPress={onSubmit} />
             </View>
         </View>
     );

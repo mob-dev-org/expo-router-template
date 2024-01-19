@@ -1,4 +1,5 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+
 import AppIcon, { AppIconProps } from './AppIcon';
 import ChevronImage, { ChevronButtonImageProps } from './ChevronImage';
 
@@ -9,12 +10,10 @@ export default {
         size: {
             options: [16, 24, 32, 48, 64],
             control: { type: 'select' },
-            defaultValue: 24,
         },
         color: {
             options: ['#faf', '#000', '#fff', '#f00', '#0f0', '#00f', '#ff0'],
             control: { type: 'select' },
-            defaultValue: '#faf',
         },
     },
 };
